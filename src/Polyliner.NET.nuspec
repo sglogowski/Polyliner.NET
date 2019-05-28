@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata minClientVersion="2.8.3">
+		<id>Polyliner.Net</id>
+		<title>Polyliner.Net</title>
+		<version>1.0.0</version>
+		<releaseNotes>
+# 1.0.0 Initial version.
+		</releaseNotes>
+		<authors>sglogowski</authors>
+		<copyright>Copyright 2019</copyright>
+		<license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/sglogowski/Polyliner.NET</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Simple Google Maps Polyline encoder/decoder.</description>
+		<summary>Simple Google Maps Polyline encoder/decoder.</summary>
+		<tags>polyline polylines maps api google googlemap</tags>
+	<dependencies>
+	</dependencies>
+	</metadata>
+	<files>
+		<!--License-->
+		<file src="..\LICENSE.txt" target="" />
+	</files>
+</package>

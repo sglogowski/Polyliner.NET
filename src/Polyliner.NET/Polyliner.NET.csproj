@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>PolylinerNet</AssemblyName>
+    <PackageId>Polyliner.Net</PackageId>
+    <Authors>Sebastian Głogowski</Authors>
+    <Product>Polyliner.Net</Product>
+    <Description>Simple Google Maps Polyline encoder/decoder.</Description>
+    <PackageProjectUrl>https://github.com/sglogowski/Polyliner.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sglogowski/Polyliner.NET</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Polyline Polylines Google Maps Api</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>
