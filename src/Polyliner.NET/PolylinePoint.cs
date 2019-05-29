@@ -1,8 +1,8 @@
 ﻿namespace PolylinerNet
 {
-    public struct Position
+    public struct PolylinePoint
     {
-        public Position(double latitude, double longitude)
+        public PolylinePoint(double latitude, double longitude)
         {
             Latitude = latitude;
             Longitude = longitude;

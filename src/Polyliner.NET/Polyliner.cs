@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PolylinerNet.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -34,17 +35,17 @@ namespace PolylinerNet
         }
     }
 
-    public class Polyliner : PolylinerBase
+    public class Polyliner : PolylinerBase, IPolyliner
     {
-        public string Encode(List<Position> positions)
+        public string Encode(List<PolylinePoint> polylinePoints)
         {
             var result = new StringBuilder();
             long lastLatitude = 0L, lastLongitude = 0L;
 
-            foreach (var position in positions)
+            foreach (var polylinePoint in polylinePoints)
             {
-                var latitude = (long)Math.Round(position.Latitude * 1e5);
-                var longitude = (long)Math.Round(position.Longitude * 1e5);
+                var latitude = (long)Math.Round(polylinePoint.Latitude * 1e5);
+                var longitude = (long)Math.Round(polylinePoint.Longitude * 1e5);
 
                 base.EncodeNextCoordinate(latitude - lastLatitude, result);
                 base.EncodeNextCoordinate(longitude - lastLongitude, result);
@@ -56,19 +57,19 @@ namespace PolylinerNet
             return result.ToString();
         }
 
-        public List<Position> Decode(string polyline)
+        public List<PolylinePoint> Decode(string polyline)
         {
-            var positions = new List<Position>();
+            var polylinePoints = new List<PolylinePoint>(polyline.Length / 2);
 
             for (int polylineIndex = 0, latitude = 0, longitude = 0; polylineIndex < polyline.Length;)
             {
                 latitude += base.DecodeNextCoordinate(polyline, ref polylineIndex);
                 longitude += base.DecodeNextCoordinate(polyline, ref polylineIndex);
 
-                positions.Add(new Position(latitude * 1e-5, longitude * 1e-5));
+                polylinePoints.Add(new PolylinePoint(latitude * 1e-5, longitude * 1e-5));
             }
 
-            return positions;
+            return polylinePoints;
         }
     }
 }

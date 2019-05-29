@@ -16,12 +16,12 @@ namespace PolylinerNet.Tests
         {
             // arrange
             var polyliner = new Polyliner();
-            var positions = new List<Position> {
-                new Position(double.Parse(latitude, CultureInfo.InvariantCulture), double.Parse(longitude, CultureInfo.InvariantCulture))
+            var points = new List<PolylinePoint> {
+                new PolylinePoint(double.Parse(latitude, CultureInfo.InvariantCulture), double.Parse(longitude, CultureInfo.InvariantCulture))
             };
 
             // act
-            var result = polyliner.Encode(positions);
+            var result = polyliner.Encode(points);
 
             // assert
             Assert.NotNull(result);
@@ -35,13 +35,13 @@ namespace PolylinerNet.Tests
         {
             // arrange
             var polyliner = new Polyliner();
-            var positions = new List<Position> {
-                new Position(double.Parse(latitude1, CultureInfo.InvariantCulture), double.Parse(longitude1, CultureInfo.InvariantCulture)),
-                new Position(double.Parse(latitude2, CultureInfo.InvariantCulture), double.Parse(longitude2, CultureInfo.InvariantCulture))
+            var points = new List<PolylinePoint> {
+                new PolylinePoint(double.Parse(latitude1, CultureInfo.InvariantCulture), double.Parse(longitude1, CultureInfo.InvariantCulture)),
+                new PolylinePoint(double.Parse(latitude2, CultureInfo.InvariantCulture), double.Parse(longitude2, CultureInfo.InvariantCulture))
             };
 
             // act
-            var result = polyliner.Encode(positions);
+            var result = polyliner.Encode(points);
 
             // assert
             Assert.NotNull(result);
