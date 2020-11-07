@@ -1,5 +1,4 @@
 ﻿using PolylinerNet.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,14 +21,16 @@ namespace PolylinerNet
 
         protected int DecodeNextCoordinate(string polyline, ref int polylineIndex)
         {
-            int result = 1; int shift = 0; int b;
+            int result = 0; int shift = 0; int b;
 
+            if (polylineIndex < polyline.Length)
             do
             {
-                b = polyline[polylineIndex++] - 63 - 1;
-                result += b << shift;
+                b = polyline[polylineIndex++] - 63;
+                result |= (b & 0x1f) << shift;
                 shift += 5;
-            } while (b >= 0x1f);
+            } 
+            while (b >= 0x20);
 
             return (result & 1) != 0 ? ~(result >> 1) : (result >> 1);
         }
@@ -44,8 +45,8 @@ namespace PolylinerNet
 
             foreach (var polylinePoint in polylinePoints)
             {
-                var latitude = (long)Math.Round(polylinePoint.Latitude * 1e5);
-                var longitude = (long)Math.Round(polylinePoint.Longitude * 1e5);
+                long latitude = (long)(polylinePoint.Latitude * 1e5);
+                long longitude = (long)(polylinePoint.Longitude * 1e5);
 
                 base.EncodeNextCoordinate(latitude - lastLatitude, result);
                 base.EncodeNextCoordinate(longitude - lastLongitude, result);
