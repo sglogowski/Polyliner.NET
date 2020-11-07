@@ -3,8 +3,10 @@
 	<metadata minClientVersion="2.8.3">
 		<id>Polyliner.Net</id>
 		<title>Polyliner.Net</title>
-		<version>1.0.1.1</version>
+		<version>1.0.2</version>
 		<releaseNotes>
+# 1.0.2 Fixed bug https://github.com/sglogowski/Polyliner.NET/issues/1
+
 # 1.0.1.1 Code cleanup, renamed Position to PolylinePoint, added initial size for PolylinePoints list.
 
 # 1.0.1 Missing dll...
@@ -12,10 +14,10 @@
 # 1.0.0 Initial version.
 		</releaseNotes>
 		<authors>sglogowski</authors>
-		<copyright>Copyright 2019</copyright>
+		<copyright>Copyright 2020</copyright>
 		<license type="file">LICENSE.txt</license>
-    <projectUrl>https://github.com/sglogowski/Polyliner.NET</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<projectUrl>https://github.com/sglogowski/Polyliner.NET</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Simple Google Maps Polyline encoder/decoder.</description>
 		<summary>Simple Google Maps Polyline encoder/decoder.</summary>
 		<tags>polyline polylines maps api google googlemap</tags>
